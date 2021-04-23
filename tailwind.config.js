@@ -7,10 +7,19 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
+      prettyPurple:{
+        DEFAULT: '#5F4B8B',
+      },
+      clouds:{
+        DEFAULT: '#F0EEE9',
+      },
       transparent: 'transparent',
       ...colors,
     },
     extend: {
+      colors:{
+        'custom-purple':'#5F4B8B',
+      },
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },

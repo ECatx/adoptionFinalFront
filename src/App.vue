@@ -1,11 +1,6 @@
 <template>
-  <div class="main">
-    <div class="title">
-      <mdi:controller-classic-outline />
-      <h1 class="">Hello There</h1>
-    </div>
-    <p class="text-xl">Mouse is on {{ x }} and {{ y }}</p>
-  </div>
+  <NavBar/>
+  
 </template>
 
 <script setup>
