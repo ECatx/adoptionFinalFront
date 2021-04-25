@@ -1,4 +1,5 @@
 <template>
-    <div class="h-48 w-48 bg-pink-500">
+    <div class="container flex mx-auto mt-20">
+            <NewCat/>
     </div>
 </template>

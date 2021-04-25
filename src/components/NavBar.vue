@@ -3,13 +3,10 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="brand flex space-x-3 text-2xl "> 
                 <button>
-                    <router-link to="/">Hello</router-link>
+                    <router-link to="/">Cat's With Hats </router-link>
                 </button>
             </div>
             <div class="space-x-2 flex">
-                <button>
-                    <router-link to="/About">About</router-link>
-                </button>
                 <button>
                     <router-link to="/Adoptions">Adoptions</router-link>
                 </button>
