@@ -18,6 +18,9 @@
                 </button>
                 <div v-else>
                     <button class="bg-lightBlue-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-lightBlue-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+                        <router-link to="CatData">AddCat</router-link>
+                    </button>
+                    <button class="bg-lightBlue-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-lightBlue-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
                         <router-link to="Messages">Messages</router-link>
                     </button>
                     <button @click="logout" class="bg-rose-800 text-white py-2 px-2 rounded-full shadow-lg hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-400">Logout</button>

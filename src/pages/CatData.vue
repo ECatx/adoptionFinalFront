@@ -1,3 +1,3 @@
 <template>
-    <ShowCats/>
+    <AddCat />
 </template>

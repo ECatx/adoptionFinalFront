@@ -22,11 +22,18 @@ export const authentication = () => {
 
 export const database = () => {
   const messages = ref([])
+  const catinfo = ref([])
+
 
   const messagesCollection = db.collection('messages')
   const messagesQuery = messagesCollection
     .orderBy('createdAt', 'desc')
     .limit(100)
+
+    const catCollection = db.collection('catinfo')
+    const catQuery = catCollection
+      .orderBy('createdAt', 'desc')
+      .limit(100)
 
   const unsubscribe = messagesQuery.onSnapshot(s => {
     messages.value = s.docs
@@ -34,7 +41,12 @@ export const database = () => {
       .reverse()
   })
 
-  onUnmounted(unsubscribe)
+  const unsubscribeCat = catQuery.onSnapshot(s => {
+    catinfo.value = s.docs
+      .map(doc => ({ id: doc.id, ...doc.data() }))
+  })
+
+  onUnmounted(unsubscribe,unsubscribeCat)
 
   const sendMessage = (text1,text2,text3,text4) => {
     messagesCollection.add({
@@ -45,5 +57,15 @@ export const database = () => {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
   }
-  return { messages, sendMessage }
+
+  const sendCats = (text1,text2,text3) => {
+    catCollection.add({
+      catsName: text1,
+      catsAge: text2,
+      catsKids: text3,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+  }
+
+  return { messages, catinfo,sendMessage , sendCats}
 }
