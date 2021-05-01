@@ -23,7 +23,12 @@ const routes = [
         path: '/Contact', component: Contact
     },
     {
-        path: '/CatData', component: CatData
+        path: '/CatData', 
+        component: CatData,
+        beforeEnter: (to, from) => {
+            if(isAuthenticated.value) return true
+            return '/'
+        }
     },
     {path:'/login', component: Login,},
     {
