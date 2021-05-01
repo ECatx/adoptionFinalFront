@@ -25,7 +25,6 @@
             </div>
         </div>
 </section>
-    <p class="text-white text-2xl flex-col">This form will connect to firebase so I can see messages when I am logged in the messages page </p>
 </template>
 
 <script setup>

@@ -13,11 +13,12 @@ const { GoogleAuthProvider } = auth
 const db = firestore()
 
 export const { isAuthenticated, user } = useAuth()
+export const signIn = (email, password) => auth().signInWithEmailAndPassword(email,password)
 
 export const authentication = () => {
   const googlePopup = () => auth().signInWithPopup(new GoogleAuthProvider())
   const signOut = () => auth().signOut()
-  return { googlePopup, signOut, isAuthenticated, user }
+  return { googlePopup ,signIn, signOut, isAuthenticated, user }
 }
 
 export const database = () => {

@@ -24,7 +24,6 @@
             </div>
         </div>
 </section>
-    <p class="text-white text-2xl flex-col">Tempoary page to add new cats to database </p>
 </template>
 
 <script setup>

@@ -13,12 +13,12 @@
                 <button>
                     <router-link to="/Contact">Contact Us</router-link>
                 </button>
-                <button v-if="!isAuthenticated">
-                    <button class="bg-purple-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-purple-400" @click="googlePopup">Login</button>
+                <button v-if="!isAuthenticated" class="bg-purple-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                    <router-link to="Login">Login</router-link>
                 </button>
                 <div v-else>
                     <button class="bg-lightBlue-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-lightBlue-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                        <router-link to="CatData">AddCat</router-link>
+                        <router-link to="CatData">Add a Cat</router-link>
                     </button>
                     <button class="bg-lightBlue-900 text-white py-2 px-2 rounded-full shadow-lg hover:bg-lightBlue-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
                         <router-link to="Messages">Messages</router-link>

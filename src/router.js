@@ -7,8 +7,7 @@ import Adoptions from './pages/Adoptions.vue'
 import Contact from './pages/Contact.vue'
 import Messages from './pages/Messages.vue'
 import CatData from './pages/CatData.vue'
-
-
+import Login from './pages/Login.vue'
 
 const routes = [
     {
@@ -26,6 +25,7 @@ const routes = [
     {
         path: '/CatData', component: CatData
     },
+    {path:'/login', component: Login,},
     {
         path: '/Messages', 
         component: Messages,
