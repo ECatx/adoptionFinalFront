@@ -59,11 +59,12 @@ export const database = () => {
     })
   }
 
-  const sendCats = (text1,text2,text3) => {
+  const sendCats = (text1,text2,text3,text4) => {
     catCollection.add({
       catsName: text1,
       catsAge: text2,
       catsKids: text3,
+      catsUrl: text4,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
   }

@@ -10,13 +10,13 @@
     const {catinfo} = database()
     import {onMounted} from 'vue'
     import { useToggle } from '@vueuse/core'
-    import {getCats,cats} from '../functions/useCats'
+    import {getCat,cats} from '../functions/getCats'
 
     const [value, toggle] = useToggle(false)
 
 
     onMounted(() => {
-     getCats()
+     getCat()
 })
 
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class=" bg-warmGray-700 shadow-lg text-white">
         <div class="">
-            <img src="../assets/cat.png">
+            <img :src='message.catsUrl' class="w-96 h-96 object-scale-down ">
         </div>
         <div class="">
             Cats Name: {{message.catsName}}
@@ -27,6 +27,7 @@
                 catsName: '',
                 catsAge: '',
                 catsKids: '',
+                catsUrl: '',
             })
         }
     })
