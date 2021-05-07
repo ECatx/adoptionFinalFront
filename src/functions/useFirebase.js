@@ -59,6 +59,8 @@ export const database = () => {
     })
   }
 
+
+
   const sendCats = (text1,text2,text3,text4) => {
     catCollection.add({
       catsName: text1,
@@ -69,5 +71,10 @@ export const database = () => {
     })
   }
 
-  return { messages, catinfo,sendMessage , sendCats}
+  const deleteCat = (id) => {
+    console.log(id)
+    db.collection('catinfo').doc(id).delete()
+  }
+
+  return { messages, catinfo,sendMessage , sendCats, deleteCat}
 }
