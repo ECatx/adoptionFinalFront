@@ -55,7 +55,7 @@ export const database = () => {
       clientPhone: text2,
       clientEmail: text3,
       clientCat: text4,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: Date(firebase.firestore.FieldValue.serverTimestamp()),
     })
   }
 

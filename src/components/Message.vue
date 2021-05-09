@@ -13,7 +13,7 @@
             CatName: {{message.clientCat}}
         </div>
         <div class="">
-            Requested at {{Date(message.createdAt)}}
+            Requested at {{message.createdAt}}
         </div>
         <div v-if="isAuthenticated" class="flex justify-end">
             <button @click="deleteMessage(message.id)" class="text-red-700 text-2xl hover:text-red-400"><mdi:delete class="text-3xl"/></button>
