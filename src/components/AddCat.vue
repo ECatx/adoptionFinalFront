@@ -1,13 +1,13 @@
 <template>
     <section class="container flex justify-center mt-20">
-        <div class="bg-pink-800 mx-auto items-center text-white">
+        <div class="bg-warmGray-700 mx-auto items-center text-white">
             <div class="mt-5 mb-5 flex flex-col">
                 <h1 class="text-white text-3xl">Add a new cat for adoption</h1>
             </div>
             <div class="object-fill flex mx-auto items-center"> 
-                <img :src="cats.url" class="w-72 h-72 object-scale-down flex place-items-center object-center">
+                <img :src="cats.url" class="w-72 h-72 object-scale-down flex mx-auto object-center place-items-end">
            </div>
-           <button  class="bg-blue-200 rounded shadow-lg flex mx-auto items-center" @click="getCat">Get new Cat</button>
+           <button  class="bg-custom-purple py-2 px-2 shadow-lg flex mx-auto items-center rounded-full" @click="getCat">Get new Cat</button>
             <div class="mt-5 mb-5 flex flex-col">
                 <label>Cats Name</label>
                 <input v-model="catsName" id="catsName" lablel="text" class="text-black" placeholder="Cats Name">
@@ -52,7 +52,7 @@
                 </select>
             </div>
             <div class="mt-5 mb-5 items-end">
-                <button class="flex-auto bg-red-800" type="submit" @click="send">Submit</button>
+                <button class=" bg-red-800 py-2 px-2 shadow-lg flex mx-auto place-items-end rounded-full hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-pink-400" type="submit" @click="send">Submit</button>
             </div>
         </div>
 </section>
@@ -89,4 +89,5 @@ const send = () => {
     getCat()
     catsUrl.value = catImage.value
   })
+
 </script>

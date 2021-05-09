@@ -76,5 +76,10 @@ export const database = () => {
     db.collection('catinfo').doc(id).delete()
   }
 
-  return { messages, catinfo,sendMessage , sendCats, deleteCat}
+  const deleteMessage = (id) => {
+    console.log(id)
+    db.collection('messages').doc(id).delete()
+  }
+
+  return { messages, catinfo,sendMessage , sendCats, deleteCat,deleteMessage}
 }

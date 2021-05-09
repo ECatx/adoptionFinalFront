@@ -13,7 +13,7 @@
     "@vueuse/firebase": "^4.9.0",
     "axios": "^0.21.1",
     "firebase": "^8.4.2",
-    "vee-validate": "^4.3.4",
+    "vee-validate": "^4.3.6",
     "vue": "^3.0.5",
     "vue-router": "^4.0.6",
     "yup": "^0.32.9"
