@@ -8,6 +8,9 @@
             </div>
             <div class="space-x-2 flex">
                 <button>
+                    <router-link to="/About">About</router-link>
+                </button>
+                <button>
                     <router-link to="/Adoptions">Adoptions</router-link>
                 </button>
                 <button>

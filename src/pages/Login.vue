@@ -11,17 +11,25 @@
                     <input type="email" name="email" id="email" placeholder="enter email address" class="w-full px-3 py-2 border rounded-md border-coolGray-700 bg-neutral-focus  text-coolGray-900" v-model="email">
                 </div>
                 <div>
+                    <p class="capitalize text-md text-left text-red-500">{{errorEmail}}</p>
+                </div>
+                <div>
                     <div class="flex justify-between mb-2">
                         <label for="password" class="text-sm">Password</label>
                     </div>
                     <input type="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md  border-coolGray-700  bg-neutral-focus text-coolGray-900" v-model="password">
+                </div>
+                <div>
+                    <p class="capitalize text-md text-left text-red-500">{{errorPassword}}</p>
                 </div>
             </div>
             <div class="space-y-2">
                 <div>
                     <button type="button" @click="login" class="w-full px-8 py-3 rounded-md bg-custom-purple text-primary-content hover:bg-primary">Sign in</button>
                 </div>
-    
+                <div>
+                    <p class="capitalize text-md text-left text-red-500">{{msg}}</p>
+                </div>
             </div>
         </form>
     </div>
@@ -30,19 +38,26 @@
     <script setup>
     import {ref} from 'vue'
     import {useRouter} from 'vue-router'
+import { msg } from '~/functions/userError'
     import {authentication} from '../functions/useFirebase'
+    import { useField, useValidateField, validate } from 'vee-validate'
+import * as yup from 'yup'
     const router = useRouter()
     const {isAuthenticated, user, googlePopup, signIn} = authentication() 
-
+    msg.value = ''
     const login = async () => {
        try {
-           await signIn(email.value,password.value)
-           router.push('/')
+           if(emailMeta.valid && passwordMeta.valid){
+             await signIn(email.value,password.value)
+             router.push('/')
+           }
+
        } catch (error) {
+           msg.value = 'Authentication Error'
            console.log(error)
        } 
 
     }
-    const email = ref('')
-    const password = ref('')
+    const {value: email,errorMessage: errorEmail,meta: emailMeta} = useField('email', yup.string().required().email())
+    const {value: password,errorMessage: errorPassword,meta: passwordMeta} = useField('password', yup.string().required().min(6))    
     </script>

@@ -10,7 +10,7 @@
             Email: {{message.clientEmail}}
         </div>
         <div class="">
-            CatName: {{message.clientCat}}
+            Cat Name: {{message.clientCat}}
         </div>
         <div class="">
             Requested at {{message.createdAt}}
