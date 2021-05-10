@@ -33,6 +33,9 @@
             </div>
         </form>
     </div>
+    <div class="flex flex-col justify-center items-center space-y-4 mb-12">
+        <fxemoji:cat class="w-48 h-48 mt-12 animate-bounce"/>
+    </div>
     </template>
     
     <script setup>
